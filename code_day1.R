@@ -15,3 +15,13 @@ library(viridis)
 
 acoustic_detections <- read.csv("C:/Users/Owner/Desktop/research/landscape/acoustic/acoustic.csv")
 sitea <- read.csv("C:/Users/Owner/Desktop/research/landscape/acoustic/biofuel sites.csv")
+
+###collapsing data into site ID and detection/not
+acoust <- merge(acoustic_detections,sitea, by="SiteID")
+
+#####
+lon <- aggregate(LON~SiteID, data=sitea, FUN=mean)
+lat <- aggregate(LAT~SiteID, data=sitea, FUN=mean)
+sitea <- merge(lon,lat, by="SiteID")
+coordinates(sitea)<-c('LON','LAT')
+head(acoust)
