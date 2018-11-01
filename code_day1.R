@@ -12,3 +12,6 @@ library(glmnet)#needed for maxnet
 library(plyr)
 library(ggplot2)
 library(viridis)
+
+acoustic_detections <- read.csv("C:/Users/Owner/Desktop/research/landscape/acoustic/acoustic.csv")
+sitea <- read.csv("C:/Users/Owner/Desktop/research/landscape/acoustic/biofuel sites.csv")
