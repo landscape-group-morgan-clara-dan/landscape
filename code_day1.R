@@ -25,3 +25,9 @@ lat <- aggregate(LAT~SiteID, data=sitea, FUN=mean)
 sitea <- merge(lon,lat, by="SiteID")
 coordinates(sitea)<-c('LON','LAT')
 head(acoust)
+
+nyhu.acousti <- aggregate(NYHU~SiteID, data=acoust, FUN=max)
+nyhu.acoustic <- nyhu.acousti[,c(1:2)]
+head(nyhu.acoustic)
+acous <- aggregate(.~SiteID, data=acoustic_detections, FUN=max)
+View(acous)
