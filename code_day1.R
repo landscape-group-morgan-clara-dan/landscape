@@ -13,8 +13,9 @@ library(plyr)
 library(ggplot2)
 library(viridis)
 
-acoustic_detections <- read.csv("C:/Users/Owner/Desktop/research/landscape/acoustic/acoustic.csv")
-sitea <- read.csv("C:/Users/Owner/Desktop/research/landscape/acoustic/biofuel sites.csv")
+setwd("C:/Users/Owner/Desktop/landscape/project/")
+acoustic_detections <- read.csv("landscape/acoustic.csv")
+sitea <- read.csv("landscape/biofuel sites.csv")
 
 ###collapsing data into site ID and detection/not
 acoust <- merge(acoustic_detections,sitea, by="SiteID")
